@@ -4,7 +4,6 @@ import com.usmonie.core.domain.tools.fastMap
 import com.usmonie.word.features.quotes.domain.models.Quote
 import com.usmonie.word.features.quotes.domain.repositories.QuotesRepository
 import com.usmonie.word.features.quotes.domain.usecases.InitiateQuotesUseCase
-import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.Flow
@@ -27,7 +26,7 @@ internal class ImportQuotesUseCaseImpl(
 		} else {
 			withContext(Dispatchers.IO) {
 				val result = insertQuotes(quotesAlreadyInserted, quotesSource.getSource("quotes.csv"))
-				emit(result)
+				emit(false)
 			}
 		}
 	}

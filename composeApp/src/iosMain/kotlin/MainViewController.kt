@@ -26,6 +26,7 @@ fun MainViewController(
 	showRewardedNewGameInterstitialAd: (onAddDismissed: () -> Unit, onRewardGranted: (Int) -> Unit) -> Unit,
 	getAdsManagerState: () -> AdsManagerState
 ): UIViewController {
+
 	startKoin {
 		modules(
 			appModule,
